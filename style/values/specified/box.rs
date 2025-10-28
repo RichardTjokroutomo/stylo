@@ -74,7 +74,7 @@ pub enum DisplayInside {
     RubyText,
     #[cfg(feature = "gecko")]
     RubyTextContainer,
-    #[cfg(feature = "gecko")]
+    #[cfg(any(feature = "gecko", feature = "servo"))]
     WebkitBox,
 }
 
@@ -164,7 +164,7 @@ impl Display {
     #[cfg(feature = "gecko")]
     pub const Ruby: Self =
         Self(((DisplayOutside::Inline as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::Ruby as u16);
-    #[cfg(feature = "gecko")]
+    #[cfg(any(feature = "gecko", feature = "servo"))]
     pub const WebkitBox: Self = Self(
         ((DisplayOutside::Block as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::WebkitBox as u16,
     );
@@ -421,7 +421,7 @@ impl DisplayKeyword {
             "ruby-text" => Full(Display::RubyText),
             #[cfg(feature = "gecko")]
             "ruby-text-container" => Full(Display::RubyTextContainer),
-            #[cfg(feature = "gecko")]
+            #[cfg(any(feature = "gecko", feature = "servo"))]
             "-webkit-box" => Full(Display::WebkitBox),
             #[cfg(feature = "gecko")]
             "-webkit-inline-box" => Full(Display::WebkitInlineBox),
