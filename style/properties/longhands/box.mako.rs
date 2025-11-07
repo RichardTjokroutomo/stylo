@@ -590,7 +590,7 @@ ${helpers.predefined_type(
     "-webkit-line-clamp",
     "LineClamp",
     "computed::LineClamp::none()",
-    engines="gecko",
+    engines="gecko servo",
     spec="https://drafts.csswg.org/css-overflow-3/#line-clamp",
     affects="layout",
 )}
