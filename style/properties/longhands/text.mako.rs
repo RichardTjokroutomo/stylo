@@ -14,6 +14,7 @@ ${helpers.predefined_type(
     spec="https://drafts.csswg.org/css-ui/#propdef-text-overflow",
     servo_restyle_damage="rebuild_box",
     affects="paint",
+    servo_pref="layout.unimplemented",
 )}
 
 ${helpers.single_keyword(
