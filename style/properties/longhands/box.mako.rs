@@ -598,6 +598,8 @@ ${helpers.predefined_type(
 ${helpers.predefined_type(
     "-webkit-box-orient",
     "horizontal vertical",
+    "WebkitBoxOrient"
+    "computed::WebkitBoxOrient::horizontal",
     engines="servo",
     spec="Nonstandard (https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)",
     affects="layout",
