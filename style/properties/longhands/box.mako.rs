@@ -595,16 +595,16 @@ ${helpers.predefined_type(
     affects="layout",
 )}
 
-${helpers.predefined_type(
-    "-webkit-box-orient",
+${helpers.single_keyword(
+    "-moz-box-orient",
     "horizontal vertical",
-    "WebkitBoxOrient"
-    "computed::WebkitBoxOrient::horizontal",
-    engines="servo",
+    engines="gecko servo",
+    animation_type="discrete",
+    aliases="-webkit-box-orient",
     spec="Nonstandard (https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)",
     affects="layout",
-    animation_type="none",
 )}
+
 
 ${helpers.predefined_type(
     "scrollbar-gutter",
