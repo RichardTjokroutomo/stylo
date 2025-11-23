@@ -593,6 +593,7 @@ ${helpers.predefined_type(
     engines="gecko servo",
     spec="https://drafts.csswg.org/css-overflow-3/#line-clamp",
     affects="layout",
+    animation_type="none",
 )}
 
 ${helpers.single_keyword(
