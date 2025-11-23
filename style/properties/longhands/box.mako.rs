@@ -593,7 +593,6 @@ ${helpers.predefined_type(
     engines="gecko servo",
     spec="https://drafts.csswg.org/css-overflow-3/#line-clamp",
     affects="layout",
-    animation_type="none",
 )}
 
 ${helpers.single_keyword(
@@ -602,6 +601,7 @@ ${helpers.single_keyword(
     engines="servo",
     spec="Nonstandard (https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)",
     affects="layout",
+    animation_type="none",
 )}
 
 ${helpers.predefined_type(
