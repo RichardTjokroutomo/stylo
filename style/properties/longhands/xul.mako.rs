@@ -42,7 +42,7 @@ ${helpers.predefined_type(
 ${helpers.single_keyword(
     "-moz-box-orient",
     "horizontal vertical",
-    engines="gecko servo",
+    engines="gecko",
     gecko_ffi_name="mBoxOrient",
     gecko_aliases="inline-axis=horizontal block-axis=vertical",
     gecko_enum_prefix="StyleBoxOrient",
