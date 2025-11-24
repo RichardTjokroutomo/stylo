@@ -414,6 +414,7 @@ impl DisplayKeyword {
             "table-column-group" => Full(Display::TableColumnGroup),
             "table-row" => Full(Display::TableRow),
             "table-cell" => Full(Display::TableCell),
+            "-webkit-box" => Full(Display::WebkitBox),
             #[cfg(feature = "gecko")]
             "ruby-base" => Full(Display::RubyBase),
             #[cfg(feature = "gecko")]
@@ -422,7 +423,6 @@ impl DisplayKeyword {
             "ruby-text" => Full(Display::RubyText),
             #[cfg(feature = "gecko")]
             "ruby-text-container" => Full(Display::RubyTextContainer),
-            "-webkit-box" => Full(Display::WebkitBox),
             #[cfg(feature = "gecko")]
             "-webkit-inline-box" => Full(Display::WebkitInlineBox),
 
