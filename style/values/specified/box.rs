@@ -422,7 +422,6 @@ impl DisplayKeyword {
             "ruby-text" => Full(Display::RubyText),
             #[cfg(feature = "gecko")]
             "ruby-text-container" => Full(Display::RubyTextContainer),
-            #[cfg(feature = "gecko")]
             "-webkit-box" => Full(Display::WebkitBox),
             #[cfg(feature = "gecko")]
             "-webkit-inline-box" => Full(Display::WebkitInlineBox),
