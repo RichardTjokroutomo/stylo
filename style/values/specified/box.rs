@@ -64,6 +64,7 @@ pub enum DisplayInside {
     TableFooterGroup,
     TableRow,
     TableCell,
+    WebkitBox,
     #[cfg(feature = "gecko")]
     Ruby,
     #[cfg(feature = "gecko")]
@@ -74,8 +75,6 @@ pub enum DisplayInside {
     RubyText,
     #[cfg(feature = "gecko")]
     RubyTextContainer,
-    #[cfg(feature = "gecko")]
-    WebkitBox,
 }
 
 impl DisplayInside {
@@ -162,13 +161,12 @@ impl Display {
     pub const TableCaption: Self = Self(
         ((DisplayOutside::TableCaption as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::Flow as u16,
     );
-    #[cfg(feature = "gecko")]
-    pub const Ruby: Self =
-        Self(((DisplayOutside::Inline as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::Ruby as u16);
-    #[cfg(feature = "gecko")]
     pub const WebkitBox: Self = Self(
         ((DisplayOutside::Block as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::WebkitBox as u16,
     );
+    #[cfg(feature = "gecko")]
+    pub const Ruby: Self =
+        Self(((DisplayOutside::Inline as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::Ruby as u16);
     #[cfg(feature = "gecko")]
     pub const WebkitInlineBox: Self = Self(
         ((DisplayOutside::Inline as u16) << Self::OUTSIDE_SHIFT) | DisplayInside::WebkitBox as u16,
