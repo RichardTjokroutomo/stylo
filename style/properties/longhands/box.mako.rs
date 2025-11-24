@@ -596,11 +596,10 @@ ${helpers.predefined_type(
 )}
 
 ${helpers.single_keyword(
-    "-moz-box-orient",
+    "-webkit-box-orient",
     "horizontal vertical",
     engines="gecko servo",
     animation_type="discrete",
-    aliases="-webkit-box-orient",
     spec="Nonstandard (https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)",
     affects="layout",
 )}
