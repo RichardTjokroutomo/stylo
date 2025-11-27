@@ -227,24 +227,30 @@ impl Parse for TextOverflow {
         context: &ParserContext,
         input: &mut Parser<'i, 't>,
     ) -> Result<TextOverflow, ParseError<'i>> {
-        let first = TextOverflowSide::parse(context, input)?;
-        #[cfg(feature = "servo")]
-        if matches!(first, TextOverflowSide::String(_)) {
-            return Err(input.new_custom_error(StyleParseErrorKind::UnspecifiedError));
-        }
-        #[cfg(feature = "gecko")]
-        if let Ok(second) = input.try_parse(|input| TextOverflowSide::parse(context, input)) {
-            return Ok(Self {
-                first,
-                second,
-                sides_are_logical: false,
-            });
-        }
-        Ok(Self {
-            first: TextOverflowSide::Clip,
-            second: first,
-            sides_are_logical: true,
-        })
+        let first = <TextOverflowSide as Parse>::parse(context, input)?;
+        Ok(
+            #[cfg(feature = "gecko")]
+            if let Ok(second) = input.try_parse(|input| <TextOverflowSide as Parse>::parse(context, input)) {
+                Self {
+                    first,
+                    second,
+                    sides_are_logical: false,
+                }
+            } else {
+                Self {
+                    first: TextOverflowSide::Clip,
+                    second: first,
+                    sides_are_logical: true,
+                }
+            },
+
+            #[cfg(feature = "servo")]
+            Self {
+                first: TextOverflowSide::Clip,
+                second: first,
+                sides_are_logical: true,
+            }
+        )
     }
 }
 
