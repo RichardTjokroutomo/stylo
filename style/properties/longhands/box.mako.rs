@@ -590,8 +590,17 @@ ${helpers.predefined_type(
     "-webkit-line-clamp",
     "LineClamp",
     "computed::LineClamp::none()",
-    engines="gecko",
+    engines="gecko servo",
     spec="https://drafts.csswg.org/css-overflow-3/#line-clamp",
+    affects="layout",
+)}
+
+${helpers.single_keyword(
+    "-webkit-box-orient",
+    "horizontal vertical",
+    engines="gecko servo",
+    animation_type="discrete",
+    spec="Nonstandard (https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)",
     affects="layout",
 )}
 
