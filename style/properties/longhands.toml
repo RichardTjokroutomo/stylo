@@ -96,14 +96,6 @@ enabled_in = "ua"
 spec = "Nonstandard (Internal-only)"
 affects = "layout"
 
-[-webkit-line-clamp]
-type = "LineClamp"
-initial = "computed::LineClamp::none()"
-struct = "box"
-engine = "gecko"
-spec = "https://drafts.csswg.org/css-overflow-3/#line-clamp"
-affects = "layout"
-
 [-x-lang]
 type = "XLang"
 initial = "computed::XLang::get_initial_value()"
@@ -4106,15 +4098,21 @@ gecko_ffi_name = "mBoxDirection"
 aliases = ["-webkit-box-direction"]
 keyword = { values = ["normal", "reverse"] }
 
-[-moz-box-orient]
-struct = "xul"
-engine = "gecko"
+[-webkit-box-orient]
+struct = "box"
+engine = "servo"
 spec = "Nonstandard (https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)"
 animation_type = "discrete"
 affects = "layout"
-gecko_ffi_name = "mBoxOrient"
-aliases = ["-webkit-box-orient"]
-keyword = { values = ["horizontal", "vertical"], gecko_aliases = ["inline-axis=horizontal", "block-axis=vertical"] }
+keyword = { values = ["horizontal", "vertical"] }
+
+[-webkit-line-clamp]
+type = "LineClamp"
+initial = "computed::LineClamp::none()"
+struct = "box"
+engine = "servo"
+spec = "https://drafts.csswg.org/css-overflow-3/#line-clamp"
+affects = "layout"
 
 [-moz-box-pack]
 struct = "xul"
