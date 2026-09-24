@@ -52,7 +52,7 @@ gecko_refcount_logging = []
 nsstring = []
 
 [dependencies]
-app_units = "0.7.8"
+app_units = { git = "https://github.com/RichardTjokroutomo/app_units", branch = "increase-resolution"}
 arrayvec = "0.7"
 atomic_refcell = "0.1"
 bitflags = "2"

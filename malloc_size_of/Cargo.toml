@@ -15,7 +15,7 @@ gecko = ["thin-vec/gecko-ffi"]
 servo = ["string_cache"]
 
 [dependencies]
-app_units = "0.7"
+app_units = { git = "https://github.com/RichardTjokroutomo/app_units", branch = "increase-resolution"}
 cssparser = "0.38"
 euclid = "0.22"
 parking_lot = "0.12"
