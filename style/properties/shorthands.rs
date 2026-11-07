@@ -2972,8 +2972,8 @@ pub mod font_synthesis {
             if self.font_synthesis_weight == &FontSynthesis::Auto {
                 writer.raw_item("weight")?;
             }
-            if self.font_synthesis_style != &FontSynthesisStyle::None {
-                if self.font_synthesis_style == &FontSynthesisStyle::Auto {
+            if self.font_synthesis_style != Some(&FontSynthesisStyle::None) {
+                if self.font_synthesis_style == Some(&FontSynthesisStyle::Auto) {
                     writer.raw_item("style")?;
                 } else {
                     writer.raw_item("oblique-only")?;
